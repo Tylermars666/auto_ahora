@@ -1,9 +1,14 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class RegistroAutoController {
+
+    @FXML
+    private Button btnGuardarRegistroAutomovil;
 
     @FXML
     private TextField txtIsGasolina;
@@ -28,5 +33,10 @@ public class RegistroAutoController {
 
     @FXML
     private TextField txtReferencia;
+
+    @FXML
+    void guardarRegistroAutomovil(ActionEvent event) {
+
+    }
 
 }
