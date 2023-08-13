@@ -32,7 +32,10 @@
             <Label layoutX="292.0" layoutY="276.0" text="Es de Gasolina?" />
             <TextField fx:id="txtNumPuertas" layoutX="120.0" layoutY="272.0" />
             <TextField fx:id="txtIsGasolina" layoutX="402.0" layoutY="272.0" />
-            <Button fx:id="btnGuardarRegistroAutomovil" layoutX="252.0" layoutY="327.0" mnemonicParsing="false" onAction="#guardarRegistroAutomovil" text="GUARDAR" />
+            <Button fx:id="btnGuardarRegistroAutomovil" layoutX="225.0" layoutY="331.0" mnemonicParsing="false" onAction="#guardarRegistroAutomovil" text="GUARDAR">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </Pane>
    </children>
