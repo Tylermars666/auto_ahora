@@ -30,4 +30,3 @@ public class RegistroAutoController {
     private TextField txtReferencia;
 
 }
-    

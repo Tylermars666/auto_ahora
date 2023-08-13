@@ -1,33 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroMotoController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="400.0" prefWidth="684.0">
          <children>
             <Label layoutX="90.0" layoutY="23.0" text="REGISTRO MOTOCICLETA" underline="true">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="114.0" text="Cilindraje">
+            <Label layoutX="25.0" layoutY="233.0" text="Cilindraje">
                <font>
-                  <Font size="36.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="38.0" layoutY="174.0" text="Tamaño Tanque">
+            <Label layoutX="314.0" layoutY="233.0" text="Tamaño Tanque">
                <font>
-                  <Font size="36.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCilindraje" layoutX="323.0" layoutY="128.0" />
-            <TextField fx:id="txtTamTanque" layoutX="323.0" layoutY="188.0" />
+            <TextField fx:id="txtCilindraje" layoutX="145.0" layoutY="238.0" />
+            <Button fx:id="btnGuardarRegistroMoto" layoutX="243.0" layoutY="312.0" mnemonicParsing="false" onAction="#guardarRegistroMoto" prefHeight="38.0" prefWidth="129.0" text="Guardar">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="42.0" layoutY="112.0" text="Placa">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="42.0" layoutY="155.0" text="Marca">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="22.0" layoutY="192.0" text="Referencia">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="317.0" layoutY="112.0" text="Modelo">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="317.0" layoutY="155.0" text="Precio">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="307.0" layoutY="192.0" text="Número de Ruedas">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <TextField fx:id="txtTamTanque" layoutX="521.0" layoutY="238.0" />
+            <TextField fx:id="txtPlaca" layoutX="145.0" layoutY="117.0" />
+            <TextField fx:id="txtMarca" layoutX="145.0" layoutY="160.0" />
+            <TextField fx:id="txtReferencia" layoutX="145.0" layoutY="197.0" />
+            <TextField fx:id="txtModelo" layoutX="521.0" layoutY="117.0" />
+            <TextField fx:id="txtPrecio" layoutX="521.0" layoutY="160.0" />
+            <TextField fx:id="txtNumRuedas" layoutX="521.0" layoutY="197.0" />
          </children>
       </Pane>
    </children>
