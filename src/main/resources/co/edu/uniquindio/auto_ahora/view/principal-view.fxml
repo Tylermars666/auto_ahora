@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.PrincipalController">
+   <children>
+      <Label alignment="CENTER" layoutX="210.0" layoutY="29.0" prefHeight="59.0" prefWidth="226.0" text="AUTO AHORA" textAlignment="CENTER">
+         <font>
+            <Font name="Candara Bold" size="31.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="381.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo_cars.png"/>
+         </image>
+      </ImageView>
+      <Text layoutX="68.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que deseas hacer?" wrappingWidth="158.93670654296875">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_menu_registro" layoutX="68.0" layoutY="166.0" mnemonicParsing="false" onAction="#abrirMenuRegistro" prefHeight="31.0" prefWidth="148.0" text="Registro de Vehiculo">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn_menu_busqueda" layoutX="68.0" layoutY="217.0" mnemonicParsing="false" onAction="#abrirMenuBusqueda" prefHeight="31.0" prefWidth="148.0" text="Busqueda y Listado">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn_menu_actualizar" layoutX="68.0" layoutY="269.0" mnemonicParsing="false" onAction="#abrirMenuActualizar" prefHeight="31.0" prefWidth="148.0" text="Actualización de Datos">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn_menu_ventas" layoutX="68.0" layoutY="320.0" mnemonicParsing="false" onAction="#abrirMenuVentas" prefHeight="31.0" prefWidth="148.0" text="Ventas y Reportes">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn_menu_eliminar" layoutX="68.0" layoutY="381.0" mnemonicParsing="false" onAction="#abrirMenuEliminar" prefHeight="31.0" prefWidth="148.0" style="-fx-border-color: red;" text="Eliminar Vehículos" textFill="#ff0909">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn_salir" layoutX="435.0" layoutY="351.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="31.0" prefWidth="93.0" style="-fx-background-color: red;" text="Salir">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</Pane>
