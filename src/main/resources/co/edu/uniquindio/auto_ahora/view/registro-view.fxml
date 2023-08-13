@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroController">
+   <children>
+      <Pane layoutX="-3.0" layoutY="-3.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="btnMoto" layoutX="32.0" layoutY="118.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="Moto" />
+            <Button fx:id="btnAutomovil" layoutX="231.0" layoutY="118.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="Automovil" />
+            <Button fx:id="btnCamion" layoutX="435.0" layoutY="118.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="Camion" />
+            <Label layoutX="106.0" layoutY="28.0" prefHeight="50.0" prefWidth="389.0" text="SELECCIONE EL TIPO DE VEHICULO" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
