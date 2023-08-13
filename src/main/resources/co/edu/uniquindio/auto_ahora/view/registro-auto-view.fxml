@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroAutoController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroAutoController">
+   <children>
+      <Pane layoutX="7.0" prefHeight="400.0" prefWidth="592.0">
+         <children>
+            <Label layoutX="104.0" layoutY="14.0" prefHeight="17.0" prefWidth="383.0" text="REGISTRO AUTOMOVIL" underline="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="101.0" text="Placa" />
+            <Label layoutX="36.0" layoutY="165.0" text="Marca" />
+            <Label layoutX="26.0" layoutY="226.0" text="Referencia" />
+            <Label layoutX="318.0" layoutY="102.0" text="Modelo" />
+            <Label layoutX="320.0" layoutY="163.0" text="Precio" />
+            <Label layoutX="278.0" layoutY="222.0" text="Numero de Ruedas" />
+            <TextField fx:id="txtPlaca" layoutX="120.0" layoutY="97.0" />
+            <TextField fx:id="txtMarca" layoutX="120.0" layoutY="159.0" />
+            <TextField fx:id="txtReferencia" layoutX="120.0" layoutY="220.0" />
+            <TextField fx:id="txtModelo" layoutX="402.0" layoutY="95.0" />
+            <TextField fx:id="txtPrecio" layoutX="402.0" layoutY="158.0" />
+            <TextField fx:id="txtNumRuedas" layoutX="402.0" layoutY="219.0" />
+            <Label layoutX="9.0" layoutY="276.0" text="Numero de Puertas" />
+            <Label layoutX="292.0" layoutY="276.0" text="Es de Gasolina?" />
+            <TextField fx:id="txtNumPuertas" layoutX="120.0" layoutY="272.0" />
+            <TextField fx:id="txtIsGasolina" layoutX="402.0" layoutY="272.0" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
