@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public interface autoAhoraCRUD {
 
     //Registrar
-    public Vehiculo registrarVehiculo();
+    public void registrarVehiculo(Vehiculo vehiculo);
 
     //Listar
     public ArrayList<Vehiculo> listarVehiculos();

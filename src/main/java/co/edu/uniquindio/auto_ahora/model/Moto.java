@@ -7,8 +7,8 @@ public class Moto extends Vehiculo {
 
     public Moto(){}
 
-    public Moto(String placa, String marca, String referencia, String modelo, int num_ruedas, int cilindraje, double tam_tanque) {
-        super(placa, marca, referencia, modelo, num_ruedas);
+    public Moto(String placa, String marca, String referencia, String modelo, int num_ruedas, int cilindraje, double tam_tanque, double precio) {
+        super(placa, marca, referencia, modelo, num_ruedas, precio);
         this.cilindraje = cilindraje;
         this.tam_tanque = tam_tanque;
     }
@@ -27,5 +27,21 @@ public class Moto extends Vehiculo {
 
     public void setTam_tanque(double tam_tanque) {
         this.tam_tanque = tam_tanque;
+    }
+
+    @Override
+    public String toString(){          //Método toString para imprimir en consola los valores del objeto creado.
+
+        return "Moto \n" +
+                "Precio: " + this.getPrecio() + "\n" +
+                "Placa: " + this.getPlaca() + "\n" +
+                "Marca: " + this.getMarca() + "\n" +
+                "Referencia: " + this.getReferencia() + "\n" +
+                "Modelo: " + this.getModelo() + "\n" +
+                "Numero de Ruedas: " + this.getNum_ruedas() + "\n" +
+                "Cilindraje: " + this.getCilindraje() + "\n" +
+                "Tamaño tanque: " + this.getTam_tanque();
+
+
     }
 }

@@ -3,6 +3,7 @@ package co.edu.uniquindio.auto_ahora.model;
 public abstract class Vehiculo {
 
     private String placa;
+    private double precio;
     private String marca;
     private String referencia;
     private String modelo;
@@ -12,7 +13,8 @@ public abstract class Vehiculo {
 
     }
 
-    public Vehiculo(String placa, String marca, String referencia, String modelo, int num_ruedas) {
+    public Vehiculo(String placa, String marca, String referencia, String modelo, int num_ruedas,double precio) {
+        this.precio = precio;
         this.placa = placa;
         this.marca = marca;
         this.referencia = referencia;
@@ -56,7 +58,13 @@ public abstract class Vehiculo {
         return num_ruedas;
     }
 
+    public double getPrecio(){return precio;}
+
+    public void setPrecio(){this.precio = precio;}
+
     public void setNum_ruedas(int num_ruedas) {
         this.num_ruedas = num_ruedas;
     }
+
+
 }

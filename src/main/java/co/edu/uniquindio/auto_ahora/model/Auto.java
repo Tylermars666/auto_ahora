@@ -7,8 +7,8 @@ public class Auto extends Vehiculo {
 
     public Auto(){}
 
-    public Auto(String placa, String marca, String referencia, String modelo, int num_ruedas, int num_puertas, boolean isGasolina) {
-        super(placa, marca, referencia, modelo, num_ruedas);
+    public Auto(String placa, String marca, String referencia, String modelo, int num_ruedas, int num_puertas, boolean isGasolina,double precio) {
+        super(placa, marca, referencia, modelo, num_ruedas, precio);
         this.num_puertas = num_puertas;
         this.isGasolina = isGasolina;
     }
@@ -27,5 +27,18 @@ public class Auto extends Vehiculo {
 
     public void setGasolina(boolean gasolina) {
         isGasolina = gasolina;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto \n" +
+                "Precio: " + this.getPrecio() + "\n" +
+                "Placa: " + this.getPlaca() + "\n" +
+                "Marca: " + this.getMarca() + "\n" +
+                "Referencia: " + this.getReferencia() + "\n" +
+                "Modelo: " + this.getModelo() + "\n" +
+                "Numero de Ruedas: " + this.getNum_ruedas() + "\n" +
+                "Numero de Puertas: " + this.getNum_puertas() + "\n" +
+                "¿Usa Gasolina? " + this.isGasolina;
     }
 }

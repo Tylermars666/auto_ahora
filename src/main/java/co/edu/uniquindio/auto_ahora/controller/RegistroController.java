@@ -24,8 +24,8 @@ public class RegistroController {
     void abrirRegistroAutomovil(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/registro-auto-view.fxml"));
 
-        Scene scene = new Scene(loader.load());
-        Stage stage = new Stage();
+        Scene scene = new Scene(loader.load());                               //Comandos para conectar la ventana Registro
+        Stage stage = new Stage();                                            //con la ventana RegistroAuto
         stage.setTitle("Registro Auto");
         stage.setScene(scene);
 
@@ -37,8 +37,8 @@ public class RegistroController {
     void abrirRegistroCamion(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/registro-camion-view.fxml"));
 
-        Scene scene = new Scene(loader.load());
-        Stage stage = new Stage();
+        Scene scene = new Scene(loader.load());                            //Comandos para conectar la ventana Registro
+        Stage stage = new Stage();                                         //con la ventana RegistroCamion
         stage.setTitle("Registro Camion");
         stage.setScene(scene);
 
@@ -50,8 +50,8 @@ public class RegistroController {
     void abrirRegistroMoto(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/registro-moto-view.fxml"));
 
-        Scene scene = new Scene(loader.load());
-        Stage stage = new Stage();
+        Scene scene = new Scene(loader.load());                            //Comandos para conectar la ventana Registro
+        Stage stage = new Stage();                                         //con la ventana RegistroMoto
         stage.setTitle("Registro Moto");
         stage.setScene(scene);
 

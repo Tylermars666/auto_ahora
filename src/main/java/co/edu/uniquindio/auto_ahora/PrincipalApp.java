@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author : Omar Piedrahita - Carlos Mancera
+ * @description : Aplicación para gestionar registro y ventana de vehículos
+ */
+
 public class PrincipalApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {

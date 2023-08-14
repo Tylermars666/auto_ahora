@@ -35,7 +35,17 @@ public class PrincipalController {
     }
 
     @FXML
-    void abrirMenuBusqueda(ActionEvent event) {
+    void abrirMenuBusqueda(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/busqueda-view.fxml"));
+
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Busqueda");
+        stage.setScene(scene);
+
+        BusquedaController controller = loader.getController();
+        stage.show();
 
     }
 

@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.auto_ahora.controller.BusquedaController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.BusquedaController">
+   <children>
+      <Label layoutX="177.0" layoutY="23.0" text="Busqueda de Vehiculo">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbt_lista_vehiculos" layoutX="154.0" layoutY="87.0" prefHeight="275.0" prefWidth="435.0">
+        <columns>
+          <TableColumn fx:id="col_placa" prefWidth="60.000030517578125" text="Placa" />
+          <TableColumn fx:id="col_marca" prefWidth="72.00001525878906" text="Marca" />
+            <TableColumn fx:id="col_referencia" prefWidth="64.79998779296875" text="Ref" />
+            <TableColumn fx:id="col_modelo" prefWidth="67.199951171875" text="Modelo" />
+            <TableColumn fx:id="col_precio" prefWidth="100.7999267578125" text="Precio" />
+            <TableColumn fx:id="col_numero_ruedas" prefWidth="75.199951171875" text="No. Ruedas" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmb_filtro_busqueda" layoutX="26.0" layoutY="165.0" onAction="#seleccionarFiltro" prefHeight="26.0" prefWidth="110.0" promptText="Filtro" />
+      <TextField fx:id="txt_valor_filtro" layoutX="26.0" layoutY="225.0" onKeyReleased="#filtrarTexto" prefHeight="26.0" prefWidth="110.0" />
+   </children>
 </AnchorPane>
