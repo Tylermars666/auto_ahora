@@ -60,18 +60,18 @@ public class BusquedaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        vehiculos = FXCollections.observableArrayList();
+        vehiculos = FXCollections.observableArrayList();                                         //Lista para cargar en la tabla
 
-        this.col_placa.setCellValueFactory(new PropertyValueFactory<>("placa"));
-        this.col_marca.setCellValueFactory(new PropertyValueFactory<>("marca"));
-        this.col_referencia.setCellValueFactory(new PropertyValueFactory<>("referencia"));
-        this.col_modelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+        this.col_placa.setCellValueFactory(new PropertyValueFactory<>("placa"));               //Estas lineas son para indicarle
+        this.col_marca.setCellValueFactory(new PropertyValueFactory<>("marca"));               //a la tabla de la ventana de busqueda
+        this.col_referencia.setCellValueFactory(new PropertyValueFactory<>("referencia"));     //cuales son los valores que se van
+        this.col_modelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));             //a agregar a cada columna
         this.col_precio.setCellValueFactory(new PropertyValueFactory<>("precio"));
         this.col_numero_ruedas.setCellValueFactory(new PropertyValueFactory<>("num_ruedas"));
 
-        for(Vehiculo vehiculo : Concesionario.getInstancia().getDataBase().getListaVehiculos()){
-            this.vehiculos.add(vehiculo);
-            this.tbt_lista_vehiculos.setItems(vehiculos);
+        for(Vehiculo vehiculo : Concesionario.getInstancia().getDataBase().getListaVehiculos()){    //Este ciclo recorre los objetos
+            this.vehiculos.add(vehiculo);                                                           //y los va agregando a la tabla
+            this.tbt_lista_vehiculos.setItems(vehiculos);                                          //en este caso, todos los vehiculos
         }
 
 
