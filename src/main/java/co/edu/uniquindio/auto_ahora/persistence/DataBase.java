@@ -2,6 +2,7 @@ package co.edu.uniquindio.auto_ahora.persistence;
 
 import co.edu.uniquindio.auto_ahora.model.Vehiculo;
 import co.edu.uniquindio.auto_ahora.model.Venta;
+import javafx.scene.control.Alert;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,12 @@ public class DataBase {
     public void setVehiculo(Vehiculo vehiculo){
         listaVehiculos.add(vehiculo);
         System.out.println(vehiculo.toString());
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Registro Exitoso");
+        alert.setContentText(vehiculo.toString());
+        alert.showAndWait();
     }
 
     public void setVenta(Venta venta){
