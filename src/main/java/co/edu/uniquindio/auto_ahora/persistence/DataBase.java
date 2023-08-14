@@ -28,7 +28,7 @@ public class DataBase {
         listaVehiculos.add(vehiculo);
         System.out.println(vehiculo.toString());
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
         alert.setHeaderText(null);
         alert.setTitle("Registro Exitoso");
         alert.setContentText(vehiculo.toString());
