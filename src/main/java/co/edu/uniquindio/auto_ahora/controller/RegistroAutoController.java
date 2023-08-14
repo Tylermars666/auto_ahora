@@ -1,12 +1,21 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
-import co.edu.uniquindio.auto_ahora.model.Concesionario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class RegistroAutoController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class RegistroAutoController implements Initializable {
+
+    @FXML
+    private ComboBox<String> comb_gasolina;
 
     @FXML
     private Button btnGuardarRegistroAutomovil;
@@ -45,6 +54,19 @@ public class RegistroAutoController {
         int num_ruedas = Integer.parseInt(this.txtNumRuedas.getText());
         int num_puertas = Integer.parseInt(this.txtNumPuertas.getText());
 
+
+    }
+
+    @FXML
+    void seleccionarCombustible(ActionEvent event) {
+
+        String opcion = comb_gasolina.getSelectionModel().getSelectedItem();
+
+    }
+
+    public void initialize(URL url, ResourceBundle rb){
+        ObservableList<String> list = FXCollections.observableArrayList("Si","No");
+        comb_gasolina.setItems(list);
 
     }
 
