@@ -28,4 +28,11 @@ public class Auto extends Vehiculo {
     public void setGasolina(boolean gasolina) {
         isGasolina = gasolina;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+" num_puertas=" + num_puertas +
+                ", isGasolina=" + isGasolina +
+                '}';
+    }
 }

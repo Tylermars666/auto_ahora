@@ -59,4 +59,6 @@ public abstract class Vehiculo {
     public void setNum_ruedas(int num_ruedas) {
         this.num_ruedas = num_ruedas;
     }
+
+
 }
