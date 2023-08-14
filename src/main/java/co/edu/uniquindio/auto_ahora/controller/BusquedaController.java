@@ -69,9 +69,6 @@ public class BusquedaController implements Initializable {
         this.col_precio.setCellValueFactory(new PropertyValueFactory<>("precio"));
         this.col_numero_ruedas.setCellValueFactory(new PropertyValueFactory<>("num_ruedas"));
 
-       /* vehiculos.addAll(Concesionario.getInstancia().getDataBase().getListaVehiculos());
-        this.tbt_lista_vehiculos.setItems(vehiculos);*/
-
         for(Vehiculo vehiculo : Concesionario.getInstancia().getDataBase().getListaVehiculos()){
             this.vehiculos.add(vehiculo);
             this.tbt_lista_vehiculos.setItems(vehiculos);
