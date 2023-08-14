@@ -101,7 +101,7 @@ public class BusquedaController implements Initializable {
         }else{
             this.filtro_vehiculos.clear();
             for(Vehiculo vehiculo : this.vehiculos){
-                if(vehiculo.getMarca().contains(valor_filtro.toLowerCase())){
+                if(vehiculo.getPlaca().contains(valor_filtro.toLowerCase())){
                     this.filtro_vehiculos.add(vehiculo);
                 }
             }
