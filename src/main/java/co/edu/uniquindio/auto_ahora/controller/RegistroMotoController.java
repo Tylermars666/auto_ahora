@@ -1,6 +1,5 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
-import co.edu.uniquindio.auto_ahora.model.Auto;
 import co.edu.uniquindio.auto_ahora.model.Concesionario;
 import co.edu.uniquindio.auto_ahora.model.Moto;
 import javafx.collections.FXCollections;
@@ -49,8 +48,8 @@ public class RegistroMotoController implements Initializable {
     @FXML
     void guardarRegistroMoto(ActionEvent event) {
 
-        String placa = this.txtPlaca.getText();
-        String marca = this.txtMarca.getText();
+        String placa = this.txtPlaca.getText();                           //Métodos para obtener los valores de los campos
+        String marca = this.txtMarca.getText();                           //de texto de la interfaz gráfica GUI
         String referencia = this.txtReferencia.getText();
         String modelo = this.txtModelo.getText();
         int num_ruedas = Integer.parseInt(opcion_ruedas);
@@ -59,7 +58,7 @@ public class RegistroMotoController implements Initializable {
         int cilindraje = Integer.parseInt(this.txtCilindraje.getText());
 
         Moto moto = new Moto(placa, marca, referencia, modelo, num_ruedas,cilindraje,tam_tanque,precio);
-        Concesionario.getInstancia().getAdmin().registrarVehiculo(moto);
+        Concesionario.getInstancia().getAdmin().registrarVehiculo(moto);      //Registro de vehículo en la base de datos
     }
 
     @FXML
@@ -70,8 +69,8 @@ public class RegistroMotoController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    public void initialize(URL url, ResourceBundle resourceBundle) {       //Método initialize que se implementa para
+                                                                           //llenar los campos que se muestran en el combobox
         ObservableList<String> list = FXCollections.observableArrayList("2","4");
         comb_ruedas.setItems(list);
     }

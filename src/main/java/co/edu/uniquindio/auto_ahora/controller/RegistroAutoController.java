@@ -17,16 +17,13 @@ import java.util.ResourceBundle;
 
 public class RegistroAutoController implements Initializable {
 
-    private String opcion = "true";
+    private String opcion = "true";                   //Atributo opción para almacenar valor del combobox y hacer un parse Boolean
 
     @FXML
     private ComboBox<String> comb_gasolina;
 
     @FXML
     private Button btnGuardarRegistroAutomovil;
-
-    @FXML
-    private TextField txtIsGasolina;
 
     @FXML
     private TextField txtMarca;
@@ -52,17 +49,18 @@ public class RegistroAutoController implements Initializable {
     @FXML
     void guardarRegistroAutomovil(ActionEvent event) {
 
-        String placa = this.txtPlaca.getText();
-        String marca = this.txtMarca.getText();
+        String placa = this.txtPlaca.getText();                           //Métodos para obtener los valores
+        String marca = this.txtMarca.getText();                          //de los campos de texto de GUI
         String referencia = this.txtReferencia.getText();
         String modelo = this.txtModelo.getText();
         int num_ruedas = Integer.parseInt(this.txtNumRuedas.getText());
         int num_puertas = Integer.parseInt(this.txtNumPuertas.getText());
         boolean is_gasolina = Boolean.parseBoolean(opcion);
         double precio = Double.parseDouble(this.txtPrecio.getText());
+
         Auto auto = new Auto(placa, marca, referencia, modelo, num_ruedas, num_puertas,is_gasolina,precio);
 
-        Concesionario.getInstancia().getAdmin().registrarVehiculo(auto);
+        Concesionario.getInstancia().getAdmin().registrarVehiculo(auto);   //Registro de vehículo en la base de datos
 
 
     }
@@ -70,8 +68,8 @@ public class RegistroAutoController implements Initializable {
     @FXML
     void seleccionarCombustible(ActionEvent event) {
 
-        if(comb_gasolina.getSelectionModel().getSelectedItem().equalsIgnoreCase("si")){
-            opcion = "true";
+        if(comb_gasolina.getSelectionModel().getSelectedItem().equalsIgnoreCase("si")){      //Estructura de decisión para
+            opcion = "true";                                                                 //pasar de Si a True y de No a False
         }else{
             opcion = "false";
         }
@@ -80,8 +78,8 @@ public class RegistroAutoController implements Initializable {
     }
 
     public void initialize(URL url, ResourceBundle rb){
-        ObservableList<String> list = FXCollections.observableArrayList("Si","No");
-        comb_gasolina.setItems(list);
+        ObservableList<String> list = FXCollections.observableArrayList("Si","No");      //Método initialize para llenar las opciones
+        comb_gasolina.setItems(list);                                                    //que se muestran en el combobox
 
     }
 

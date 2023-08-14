@@ -30,7 +30,7 @@ public class Moto extends Vehiculo {
     }
 
     @Override
-    public String toString(){
+    public String toString(){          //Método toString para imprimir en consola los valores del objeto creado.
 
         return "Moto \n" +
                 "Precio: " + this.getPrecio() + "\n" +
