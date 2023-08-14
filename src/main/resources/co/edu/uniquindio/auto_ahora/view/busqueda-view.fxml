@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.auto_ahora.controller.BusquedaController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.BusquedaController">
+   <children>
+      <Label layoutX="177.0" layoutY="23.0" text="Busqueda de Vehiculo">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="125.0" text="Filtro">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbt_lista_vehiculos" layoutX="154.0" layoutY="87.0" prefHeight="275.0" prefWidth="424.0">
+        <columns>
+          <TableColumn fx:id="col_placa" prefWidth="69.60000610351562" text="Placa" />
+          <TableColumn fx:id="col_marca" prefWidth="72.00001525878906" text="Marca" />
+            <TableColumn fx:id="col_referencia" prefWidth="58.39996337890625" text="Ref" />
+            <TableColumn fx:id="col_modelo" prefWidth="63.99993896484375" text="Modelo" />
+            <TableColumn fx:id="col_precio" prefWidth="84.79998779296875" text="Precio" />
+            <TableColumn fx:id="col_numero_ruedas" prefWidth="77.5999755859375" text="No. Ruedas" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmb_filtro_busqueda" layoutX="26.0" layoutY="165.0" prefHeight="26.0" prefWidth="110.0" />
+      <TextField fx:id="txt_valor_filtro" layoutX="26.0" layoutY="225.0" prefHeight="26.0" prefWidth="110.0" />
+      <Button fx:id="btn_filtro" layoutX="41.0" layoutY="291.0" mnemonicParsing="false" onAction="#aplicarFiltroBusqueda" text="Aplicar filtro" />
+   </children>
 </AnchorPane>
