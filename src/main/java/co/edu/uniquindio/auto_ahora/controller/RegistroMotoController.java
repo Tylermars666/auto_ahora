@@ -1,14 +1,26 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class RegistroMotoController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class RegistroMotoController implements Initializable {
+
+    String opcion_ruedas;
 
     @FXML
     private Button btnGuardarRegistroMoto;
+
+    @FXML
+    private ComboBox<String> comb_ruedas;
 
     @FXML
     private TextField txtCilindraje;
@@ -18,9 +30,6 @@ public class RegistroMotoController {
 
     @FXML
     private TextField txtModelo;
-
-    @FXML
-    private TextField txtNumRuedas;
 
     @FXML
     private TextField txtPlaca;
@@ -39,4 +48,16 @@ public class RegistroMotoController {
 
     }
 
+    @FXML
+    void seleccionarNumRuedas(ActionEvent event) {
+
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        ObservableList<String> list = FXCollections.observableArrayList("2","4");
+        comb_ruedas.setItems(list);
+    }
 }

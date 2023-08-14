@@ -59,7 +59,8 @@ public class RegistroAutoController implements Initializable {
         int num_ruedas = Integer.parseInt(this.txtNumRuedas.getText());
         int num_puertas = Integer.parseInt(this.txtNumPuertas.getText());
         boolean is_gasolina = Boolean.parseBoolean(opcion);
-        Vehiculo auto = new Auto(placa, marca, referencia, modelo, num_ruedas, num_puertas,is_gasolina);
+        double precio = Double.parseDouble(this.txtPrecio.getText());
+        Vehiculo auto = new Auto(placa, marca, referencia, modelo, num_ruedas, num_puertas,is_gasolina,precio);
 
         Concesionario.getInstancia().getAdmin().registrarVehiculo(auto);
 

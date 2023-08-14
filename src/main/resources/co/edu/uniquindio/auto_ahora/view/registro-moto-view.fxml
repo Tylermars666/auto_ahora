@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroMotoController">
+<AnchorPane prefHeight="400.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroMotoController">
    <children>
       <Pane prefHeight="400.0" prefWidth="570.0">
          <children>
@@ -17,9 +18,9 @@
                </font>
             </Label>
             <Label layoutX="25.0" layoutY="233.0" text="Cilindraje" />
-            <Label layoutX="267.0" layoutY="234.0" text="Tamaño Tanque" />
+            <Label layoutX="285.0" layoutY="201.0" text="Tamaño Tanque" />
             <TextField fx:id="txtCilindraje" layoutX="95.0" layoutY="230.0" />
-            <Button fx:id="btnGuardarRegistroMoto" layoutX="203.0" layoutY="295.0" mnemonicParsing="false" onAction="#guardarRegistroMoto" prefHeight="38.0" prefWidth="129.0" text="GUARDAR">
+            <Button fx:id="btnGuardarRegistroMoto" layoutX="221.0" layoutY="309.0" mnemonicParsing="false" onAction="#guardarRegistroMoto" prefHeight="38.0" prefWidth="129.0" text="GUARDAR">
                <font>
                   <Font size="18.0" />
                </font>
@@ -27,16 +28,15 @@
             <Label layoutX="42.0" layoutY="112.0" text="Placa" />
             <Label layoutX="42.0" layoutY="155.0" text="Marca" />
             <Label layoutX="22.0" layoutY="192.0" text="Referencia" />
-            <Label layoutX="297.0" layoutY="112.0" text="Modelo" />
-            <Label layoutX="302.0" layoutY="155.0" text="Precio" />
-            <Label layoutX="267.0" layoutY="193.0" text="Número de Ruedas" />
-            <TextField fx:id="txtTamTanque" layoutX="401.0" layoutY="228.0" />
+            <Label layoutX="319.0" layoutY="112.0" text="Modelo" />
+            <Label layoutX="328.0" layoutY="155.0" text="Precio" />
+            <TextField fx:id="txtTamTanque" layoutX="401.0" layoutY="194.0" />
             <TextField fx:id="txtPlaca" layoutX="95.0" layoutY="107.0" />
             <TextField fx:id="txtMarca" layoutX="95.0" layoutY="150.0" />
             <TextField fx:id="txtReferencia" layoutX="95.0" layoutY="189.0" />
             <TextField fx:id="txtModelo" layoutX="401.0" layoutY="107.0" />
             <TextField fx:id="txtPrecio" layoutX="401.0" layoutY="150.0" />
-            <TextField fx:id="txtNumRuedas" layoutX="401.0" layoutY="187.0" />
+            <ComboBox fx:id="comb_ruedas" layoutX="400.0" layoutY="237.0" onAction="#seleccionarNumRuedas" prefWidth="150.0" promptText="Numero de ruedas" />
          </children>
       </Pane>
    </children>
