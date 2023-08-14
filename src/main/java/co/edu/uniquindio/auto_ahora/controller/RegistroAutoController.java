@@ -1,5 +1,8 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import co.edu.uniquindio.auto_ahora.model.Auto;
+import co.edu.uniquindio.auto_ahora.model.Concesionario;
+import co.edu.uniquindio.auto_ahora.model.Vehiculo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegistroAutoController implements Initializable {
+
+    private String opcion = "true";
 
     @FXML
     private ComboBox<String> comb_gasolina;
@@ -53,6 +58,10 @@ public class RegistroAutoController implements Initializable {
         String modelo = this.txtModelo.getText();
         int num_ruedas = Integer.parseInt(this.txtNumRuedas.getText());
         int num_puertas = Integer.parseInt(this.txtNumPuertas.getText());
+        boolean is_gasolina = Boolean.parseBoolean(opcion);
+        Vehiculo auto = new Auto(placa, marca, referencia, modelo, num_ruedas, num_puertas,is_gasolina);
+
+        Concesionario.getInstancia().getAdmin().registrarVehiculo(auto);
 
 
     }
@@ -60,7 +69,12 @@ public class RegistroAutoController implements Initializable {
     @FXML
     void seleccionarCombustible(ActionEvent event) {
 
-        String opcion = comb_gasolina.getSelectionModel().getSelectedItem();
+        if(comb_gasolina.getSelectionModel().getSelectedItem().equalsIgnoreCase("si")){
+            opcion = "true";
+        }else{
+            opcion = "false";
+        }
+
 
     }
 
