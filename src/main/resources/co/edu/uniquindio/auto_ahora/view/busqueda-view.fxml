@@ -22,14 +22,14 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TableView fx:id="tbt_lista_vehiculos" layoutX="154.0" layoutY="87.0" prefHeight="275.0" prefWidth="424.0">
+      <TableView fx:id="tbt_lista_vehiculos" layoutX="154.0" layoutY="87.0" prefHeight="275.0" prefWidth="435.0">
         <columns>
-          <TableColumn fx:id="col_placa" prefWidth="69.60000610351562" text="Placa" />
+          <TableColumn fx:id="col_placa" prefWidth="60.000030517578125" text="Placa" />
           <TableColumn fx:id="col_marca" prefWidth="72.00001525878906" text="Marca" />
-            <TableColumn fx:id="col_referencia" prefWidth="58.39996337890625" text="Ref" />
-            <TableColumn fx:id="col_modelo" prefWidth="63.99993896484375" text="Modelo" />
-            <TableColumn fx:id="col_precio" prefWidth="84.79998779296875" text="Precio" />
-            <TableColumn fx:id="col_numero_ruedas" prefWidth="77.5999755859375" text="No. Ruedas" />
+            <TableColumn fx:id="col_referencia" prefWidth="64.79998779296875" text="Ref" />
+            <TableColumn fx:id="col_modelo" prefWidth="67.199951171875" text="Modelo" />
+            <TableColumn fx:id="col_precio" prefWidth="100.7999267578125" text="Precio" />
+            <TableColumn fx:id="col_numero_ruedas" prefWidth="75.199951171875" text="No. Ruedas" />
         </columns>
       </TableView>
       <ComboBox fx:id="cmb_filtro_busqueda" layoutX="26.0" layoutY="165.0" prefHeight="26.0" prefWidth="110.0" />

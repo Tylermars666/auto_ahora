@@ -1,5 +1,6 @@
 package co.edu.uniquindio.auto_ahora.persistence;
 
+import co.edu.uniquindio.auto_ahora.model.Auto;
 import co.edu.uniquindio.auto_ahora.model.Vehiculo;
 import co.edu.uniquindio.auto_ahora.model.Venta;
 import javafx.scene.control.Alert;
@@ -14,6 +15,7 @@ public class DataBase {
     public DataBase(){
         listaVehiculos = new ArrayList<Vehiculo>();
         listaVentas = new ArrayList<Venta>();
+        listaVehiculos.add(new Auto("123","Toyota","col123toy","Tacoma",4,4,true,1500000.0));
     }
 
     public ArrayList<Vehiculo> getListaVehiculos(){
