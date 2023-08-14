@@ -1,5 +1,8 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import co.edu.uniquindio.auto_ahora.model.Auto;
+import co.edu.uniquindio.auto_ahora.model.Concesionario;
+import co.edu.uniquindio.auto_ahora.model.Moto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,11 +49,23 @@ public class RegistroMotoController implements Initializable {
     @FXML
     void guardarRegistroMoto(ActionEvent event) {
 
+        String placa = this.txtPlaca.getText();
+        String marca = this.txtMarca.getText();
+        String referencia = this.txtReferencia.getText();
+        String modelo = this.txtModelo.getText();
+        int num_ruedas = Integer.parseInt(opcion_ruedas);
+        double precio = Double.parseDouble(this.txtPrecio.getText());
+        double tam_tanque = Double.parseDouble(this.txtTamTanque.getText());
+        int cilindraje = Integer.parseInt(this.txtCilindraje.getText());
+
+        Moto moto = new Moto(placa, marca, referencia, modelo, num_ruedas,cilindraje,tam_tanque,precio);
+        Concesionario.getInstancia().getAdmin().registrarVehiculo(moto);
     }
 
     @FXML
     void seleccionarNumRuedas(ActionEvent event) {
 
+        opcion_ruedas = comb_ruedas.getSelectionModel().getSelectedItem();
 
     }
 

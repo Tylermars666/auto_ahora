@@ -31,8 +31,14 @@ public class Auto extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString()+" num_puertas=" + num_puertas +
-                ", isGasolina=" + isGasolina +
-                '}';
+        return "Auto \n" +
+                "Precio: " + this.getPrecio() + "\n" +
+                "Placa: " + this.getPlaca() + "\n" +
+                "Marca: " + this.getMarca() + "\n" +
+                "Referencia: " + this.getReferencia() + "\n" +
+                "Modelo: " + this.getModelo() + "\n" +
+                "Numero de Ruedas: " + this.getNum_ruedas() + "\n" +
+                "Numero de Puertas: " + this.getNum_puertas() + "\n" +
+                "¿Usa Gasolina? " + this.isGasolina;
     }
 }

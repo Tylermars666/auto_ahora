@@ -28,4 +28,20 @@ public class Moto extends Vehiculo {
     public void setTam_tanque(double tam_tanque) {
         this.tam_tanque = tam_tanque;
     }
+
+    @Override
+    public String toString(){
+
+        return "Moto \n" +
+                "Precio: " + this.getPrecio() + "\n" +
+                "Placa: " + this.getPlaca() + "\n" +
+                "Marca: " + this.getMarca() + "\n" +
+                "Referencia: " + this.getReferencia() + "\n" +
+                "Modelo: " + this.getModelo() + "\n" +
+                "Numero de Ruedas: " + this.getNum_ruedas() + "\n" +
+                "Cilindraje: " + this.getCilindraje() + "\n" +
+                "Tamaño tanque: " + this.getTam_tanque();
+
+
+    }
 }
