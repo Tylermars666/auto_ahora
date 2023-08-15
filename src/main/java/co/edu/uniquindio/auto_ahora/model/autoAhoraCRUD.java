@@ -10,10 +10,10 @@ public interface autoAhoraCRUD {
     //Listar
     public ArrayList<Vehiculo> listarVehiculos();
 
-    //Actualizar
-
 
     //Eliminar
+
+    public void eliminarVehiculo(Vehiculo vehiculo);
 
     //Vender
 

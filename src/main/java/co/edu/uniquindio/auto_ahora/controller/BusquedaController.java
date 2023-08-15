@@ -232,7 +232,23 @@ public class BusquedaController implements Initializable {
 
     @FXML
     void eliminarVehiculo(ActionEvent event) {
-
+        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();
+        if(vehiculo == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debes seleccionar un vehículo primero");
+            alert.showAndWait();
+        }else{
+            this.vehiculos.remove(vehiculo);
+            Concesionario.getInstancia().getAdmin().eliminarVehiculo(vehiculo);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+            alert.setHeaderText(null);
+            alert.setTitle("Vehiculo Eliminado");
+            alert.setContentText("El vehículo se ha eliminado correctamente");
+            alert.showAndWait();
+            this.tbt_lista_vehiculos.refresh();
+        }
     }
 
     @FXML

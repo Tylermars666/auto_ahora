@@ -42,4 +42,9 @@ public class Administrador implements autoAhoraCRUD {
     public ArrayList<Vehiculo> listarVehiculos() {
         return null;
     }
+
+    @Override
+    public void eliminarVehiculo(Vehiculo vehiculo) {
+        dataBase.getListaVehiculos().remove(vehiculo);
+    }
 }
