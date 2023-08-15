@@ -1,5 +1,6 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import co.edu.uniquindio.auto_ahora.model.Concesionario;
 import co.edu.uniquindio.auto_ahora.model.Vehiculo;
@@ -22,6 +23,36 @@ public class BusquedaController implements Initializable {
     String filtro_seleccionado;                   //Atributo que corresponde al filtro seleccionado del combobox
 
     String valor_filtro;                          //Atributo que corresponde al valor de filtro escrito en textField
+
+    @FXML
+    private TextField txtMarca;
+
+    @FXML
+    private TextField txtModelo;
+
+    @FXML
+    private TextField txtNumRuedas;
+
+    @FXML
+    private TextField txtPlaca;
+
+    @FXML
+    private TextField txtPrecio;
+
+    @FXML
+    private TextField txtReferencia;
+
+    @FXML
+    private TextField txtAdicional_1;
+
+    @FXML
+    private TextField txtAdicional_2;
+
+    @FXML
+    private Button txtEliminar;
+
+    @FXML
+    private Button btnActualizar;
 
     @FXML
     private ComboBox<String> cmb_filtro_busqueda;
@@ -54,6 +85,17 @@ public class BusquedaController implements Initializable {
     private ObservableList<Vehiculo> filtro_vehiculos;              //Observable List para tabla aplicando filtro
     private ObservableList<String> opciones_filtro;                 //Observable List para el Combobox
 
+
+    @FXML
+    void actualizarVehiculo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void eliminarVehiculo(ActionEvent event) {
+
+    }
+    
     @FXML
     void seleccionarFiltro(ActionEvent event) {
 
@@ -121,6 +163,7 @@ public class BusquedaController implements Initializable {
             this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
         }
     }
+
     public void filtrarPorReferencia(){                            //Funciona igual que el anterior, solo cambia el atributo
         valor_filtro = this.txt_valor_filtro.getText();
         if(valor_filtro.isEmpty()){
@@ -135,6 +178,7 @@ public class BusquedaController implements Initializable {
             this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
         }
     }
+
     public void filtrarPorModelo(){                              //Funciona igual que el anterior, solo cambia el atributo
         valor_filtro = this.txt_valor_filtro.getText();
         if(valor_filtro.isEmpty()){
@@ -150,6 +194,7 @@ public class BusquedaController implements Initializable {
         }
 
     }
+
     public void filtrarPorPrecio(){
         valor_filtro = this.txt_valor_filtro.getText();                      //Este funciona igual que los demás
                                                                              //Solo cambia en un aspecto, ya que este es un atributo
