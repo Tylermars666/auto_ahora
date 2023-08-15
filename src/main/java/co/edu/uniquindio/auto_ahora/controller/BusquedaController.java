@@ -122,6 +122,7 @@ public class BusquedaController implements Initializable {
                 case "Camion":
                     Camion camion = (Camion)vehiculo;
                     this.txtAdicional_1.setText(String.valueOf(camion.getCap_carga()));
+                    this.txtAdicional_2.setText("");
             }
         }
     }
