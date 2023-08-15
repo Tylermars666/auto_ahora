@@ -36,7 +36,7 @@ public class PrincipalController {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/busqueda-view.fxml"));
 
-        Scene scene = new Scene(loader.load());
+        Scene scene = new Scene(loader.load());                         //Metodo para conectar ventana principal con ventana Busqueda
         Stage stage = new Stage();
         stage.setTitle("Busqueda");
         stage.setScene(scene);
@@ -57,7 +57,7 @@ public class PrincipalController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/registro-view.fxml"));
 
         Scene scene = new Scene(loader.load());
-        Stage stage = new Stage();
+        Stage stage = new Stage();                                 //Método para conectar ventana principal con ventana de Registro
         stage.setTitle("Registros");
         stage.setScene(scene);
 
