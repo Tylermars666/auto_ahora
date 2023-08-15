@@ -9,4 +9,9 @@ public class Venta {
     private Vehiculo vehiculo;
     private LocalDate fecha;
 
+    public Venta(){
+        fecha = LocalDate.now();
+    }
 }
+
+
