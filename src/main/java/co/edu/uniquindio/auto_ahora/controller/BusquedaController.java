@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -91,6 +92,21 @@ public class BusquedaController implements Initializable {
 
 
     //---------------------------------------MÉTODOS-------------------------------------------
+
+    @FXML
+    void seleccionarVehiculoTabla(MouseEvent event) {
+        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();
+
+        if(vehiculo!=null){
+
+            this.txtPlaca.setText(vehiculo.getPlaca());
+            this.txtMarca.setText(vehiculo.getMarca());
+            this.txtReferencia.setText(vehiculo.getReferencia());
+            this.txtModelo.setText(vehiculo.getModelo());
+            this.txtPrecio.setText(String.valueOf(vehiculo.getPrecio()));
+            this.txtNumRuedas.setText(String.valueOf(vehiculo.getNum_ruedas()));
+        }
+    }
 
     @FXML
     void actualizarVehiculo(ActionEvent event) {

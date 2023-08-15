@@ -17,7 +17,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tbt_lista_vehiculos" layoutX="81.0" layoutY="83.0" prefHeight="178.0" prefWidth="440.0">
+      <TableView fx:id="tbt_lista_vehiculos" layoutX="81.0" layoutY="83.0" onMouseClicked="#seleccionarVehiculoTabla" prefHeight="178.0" prefWidth="440.0">
         <columns>
           <TableColumn fx:id="col_placa" prefWidth="60.000030517578125" text="Placa" />
           <TableColumn fx:id="col_marca" prefWidth="72.00001525878906" text="Marca" />
