@@ -1,16 +1,12 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
 import co.edu.uniquindio.auto_ahora.model.*;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -129,6 +125,16 @@ public class BusquedaController implements Initializable {
 
     @FXML
     void actualizarVehiculo(ActionEvent event) {
+
+        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();
+
+        if(vehiculo==null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe seleccionar un vehículo primero");
+            alert.showAndWait();
+        }
 
     }
 
