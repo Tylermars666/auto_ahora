@@ -20,9 +20,11 @@ import java.util.ResourceBundle;
 
 public class BusquedaController implements Initializable {
 
-    String filtro_seleccionado;                   //Atributo que corresponde al filtro seleccionado del combobox
+    //------------------------------------ATRIBUTOS------------------------------
 
-    String valor_filtro;                          //Atributo que corresponde al valor de filtro escrito en textField
+    String filtro_seleccionado;                                    //Atributo que corresponde al filtro seleccionado del combobox
+
+    String valor_filtro;                                           //Atributo que corresponde al valor de filtro escrito en textField
 
     @FXML
     private TextField txtMarca;
@@ -81,10 +83,14 @@ public class BusquedaController implements Initializable {
     @FXML
     private TextField txt_valor_filtro;
 
-    private ObservableList<Vehiculo> vehiculos;                     //Observable List para tabla de vehiculos
-    private ObservableList<Vehiculo> filtro_vehiculos;              //Observable List para tabla aplicando filtro
-    private ObservableList<String> opciones_filtro;                 //Observable List para el Combobox
+    private ObservableList<Vehiculo> vehiculos;                           //Observable List para tabla de vehiculos
 
+    private ObservableList<Vehiculo> filtro_vehiculos;                    //Observable List para tabla aplicando filtro
+
+    private ObservableList<String> opciones_filtro;                       //Observable List para el Combobox
+
+
+    //---------------------------------------MÉTODOS-------------------------------------------
 
     @FXML
     void actualizarVehiculo(ActionEvent event) {
@@ -105,10 +111,10 @@ public class BusquedaController implements Initializable {
     }
 
     @FXML
-    void filtrarTexto(KeyEvent event) {                                //Este método usa una estructura de decisión switch
-                                                                      //para decidir que método usar cuando para filtrar
-        switch (filtro_seleccionado){                                //la busqueda cuando escribimos en el textField de la
-                                                                     //ventana de Busqueda
+    void filtrarTexto(KeyEvent event) {                                                    //Este método usa una estructura de decisión switch
+                                                                                          //para decidir que método usar cuando para filtrar
+        switch (filtro_seleccionado){                                                    //la busqueda cuando escribimos en el textField de la
+                                                                                        //ventana de Busqueda
             case "placa":
                filtrarPorPlaca();
                 break;
@@ -129,86 +135,6 @@ public class BusquedaController implements Initializable {
                 filtrarPorPrecio();
         }
 
-
-
-    }
-                                                                    //Este método es el que se invoca cuando
-    public void filtrarPorPlaca(){                            //elegimos 'placa' en el combobox y escribimos en el textField
-
-        valor_filtro = this.txt_valor_filtro.getText();       //Guarda en la variable valor_filtro lo que escribimos en el textField
-        if(valor_filtro.isEmpty()){                           //Si el textField está vacío, lo que hace esta línea es
-            this.tbt_lista_vehiculos.setItems(vehiculos);     //Setear en la tabla los valores que ya están en la base de datos
-        }else{
-            this.filtro_vehiculos.clear();                     //Si el textfield no está vacío, lo que hace es limpiar la tabla
-            for(Vehiculo vehiculo : this.vehiculos){                             //Luego recorrer todos los objetos vehiculos dentro del
-                if(vehiculo.getPlaca().contains(valor_filtro.toLowerCase())){   //ObservableList de vehiculos (que corresponden a los vehiculos registrados en la base de datos)
-                    this.filtro_vehiculos.add(vehiculo);               //Si lo que escribimos en el textfield es similar al atributo del vehiculo, se irá agregando a la tabla
-                }
-            }
-            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);      //Por último se agregan a la tabla todos los vehiculos que coincidan
-        }                                                             //con la busqueda escrita en el textfield
-    }
-
-    public void filtrarPorMarca(){
-        valor_filtro = this.txt_valor_filtro.getText();             //Funciona igual que el anterior, solo cambia el atributo
-        if(valor_filtro.isEmpty()){
-            this.tbt_lista_vehiculos.setItems(vehiculos);
-        }else{
-            this.filtro_vehiculos.clear();
-            for(Vehiculo vehiculo : this.vehiculos){
-                if(vehiculo.getMarca().contains(valor_filtro.toLowerCase())){
-                    this.filtro_vehiculos.add(vehiculo);
-                }
-            }
-            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
-        }
-    }
-
-    public void filtrarPorReferencia(){                            //Funciona igual que el anterior, solo cambia el atributo
-        valor_filtro = this.txt_valor_filtro.getText();
-        if(valor_filtro.isEmpty()){
-            this.tbt_lista_vehiculos.setItems(vehiculos);
-        }else{
-            this.filtro_vehiculos.clear();
-            for(Vehiculo vehiculo : this.vehiculos){
-                if(vehiculo.getReferencia().contains(valor_filtro.toLowerCase())){
-                    this.filtro_vehiculos.add(vehiculo);
-                }
-            }
-            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
-        }
-    }
-
-    public void filtrarPorModelo(){                              //Funciona igual que el anterior, solo cambia el atributo
-        valor_filtro = this.txt_valor_filtro.getText();
-        if(valor_filtro.isEmpty()){
-            this.tbt_lista_vehiculos.setItems(vehiculos);
-        }else{
-            this.filtro_vehiculos.clear();
-            for(Vehiculo vehiculo : this.vehiculos){
-                if(vehiculo.getModelo().contains(valor_filtro.toLowerCase())){
-                    this.filtro_vehiculos.add(vehiculo);
-                }
-            }
-            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
-        }
-
-    }
-
-    public void filtrarPorPrecio(){
-        valor_filtro = this.txt_valor_filtro.getText();                      //Este funciona igual que los demás
-                                                                             //Solo cambia en un aspecto, ya que este es un atributo
-        if(valor_filtro.isEmpty()){                                          //de tipo double y tiene que hacerse un Parse a String
-            this.tbt_lista_vehiculos.setItems(vehiculos);                    //y luego si poder comparar los atributos
-        }else{
-            this.filtro_vehiculos.clear();
-            for(Vehiculo vehiculo : this.vehiculos){
-                if(String.valueOf(vehiculo.getPrecio()).contains(valor_filtro.toLowerCase())){   //El parse se hace en esta línea
-                    this.filtro_vehiculos.add(vehiculo);                                         //con String.valueOf(vehiculo.getPrecio)
-                }
-            }
-            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
-        }
     }
 
     @Override
@@ -229,10 +155,93 @@ public class BusquedaController implements Initializable {
 
         this.vehiculos.addAll(Concesionario.getInstancia().getDataBase().getListaVehiculos());  //Este es un método que recorre los objetos
         this.tbt_lista_vehiculos.setItems(vehiculos);                                           //y los va agregando a la tabla
-                                                                                                //en este caso, todos los vehiculos
-
-
-
+                                                                                               //en este caso, todos los vehiculos
 
     }
+
+
+
+
+    //------------------------------------------------------REFACTOR METHODS------------------------------------
+
+                                                                                           //Este método es el que se invoca cuando
+    public void filtrarPorPlaca(){                                                        //elegimos 'placa' en el combobox y escribimos en el textField
+
+        valor_filtro = this.txt_valor_filtro.getText();                                  //Guarda en la variable valor_filtro lo que escribimos en el textField
+        if(valor_filtro.isEmpty()){                                                      //Si el textField está vacío, lo que hace esta línea es
+            this.tbt_lista_vehiculos.setItems(vehiculos);                               //Setear en la tabla los valores que ya están en la base de datos
+        }else{
+            this.filtro_vehiculos.clear();                                              //Si el textfield no está vacío, lo que hace es limpiar la tabla
+            for(Vehiculo vehiculo : this.vehiculos){                                    //Luego recorrer todos los objetos vehiculos dentro del
+                if(vehiculo.getPlaca().contains(valor_filtro.toLowerCase())){          //ObservableList de vehiculos (que corresponden a los vehiculos registrados en la base de datos)
+                    this.filtro_vehiculos.add(vehiculo);                               //Si lo que escribimos en el textfield es similar al atributo del vehiculo, se irá agregando a la tabla
+                }
+            }
+            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);                       //Por último se agregan a la tabla todos los vehiculos que coincidan
+        }                                                                              //con la busqueda escrita en el textfield
+    }
+
+    public void filtrarPorMarca(){
+        valor_filtro = this.txt_valor_filtro.getText();                       //Funciona igual que el anterior, solo cambia el atributo
+        if(valor_filtro.isEmpty()){
+            this.tbt_lista_vehiculos.setItems(vehiculos);
+        }else{
+            this.filtro_vehiculos.clear();
+            for(Vehiculo vehiculo : this.vehiculos){
+                if(vehiculo.getMarca().toLowerCase().contains(valor_filtro.toLowerCase())){
+                    this.filtro_vehiculos.add(vehiculo);
+                }
+            }
+            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
+        }
+    }
+
+    public void filtrarPorReferencia(){                                      //Funciona igual que el anterior, solo cambia el atributo
+        valor_filtro = this.txt_valor_filtro.getText();
+        if(valor_filtro.isEmpty()){
+            this.tbt_lista_vehiculos.setItems(vehiculos);
+        }else{
+            this.filtro_vehiculos.clear();
+            for(Vehiculo vehiculo : this.vehiculos){
+                if(vehiculo.getReferencia().toLowerCase().contains(valor_filtro.toLowerCase())){
+                    this.filtro_vehiculos.add(vehiculo);
+                }
+            }
+            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
+        }
+    }
+
+    public void filtrarPorModelo(){                                         //Funciona igual que el anterior, solo cambia el atributo
+        valor_filtro = this.txt_valor_filtro.getText();
+        if(valor_filtro.isEmpty()){
+            this.tbt_lista_vehiculos.setItems(vehiculos);
+        }else{
+            this.filtro_vehiculos.clear();
+            for(Vehiculo vehiculo : this.vehiculos){
+                if(vehiculo.getModelo().toLowerCase().contains(valor_filtro.toLowerCase())){
+                    this.filtro_vehiculos.add(vehiculo);
+                }
+            }
+            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
+        }
+
+    }
+
+    public void filtrarPorPrecio(){
+        valor_filtro = this.txt_valor_filtro.getText();                                      //Este funciona igual que los demás
+                                                                                            //Solo cambia en un aspecto, ya que este es un atributo
+        if(valor_filtro.isEmpty()){                                                         //de tipo double y tiene que hacerse un Parse a String
+            this.tbt_lista_vehiculos.setItems(vehiculos);                                   //y luego si poder comparar los atributos
+        }else{
+            this.filtro_vehiculos.clear();
+            for(Vehiculo vehiculo : this.vehiculos){
+                if(String.valueOf(vehiculo.getPrecio()).contains(valor_filtro.toLowerCase())){   //El parse se hace en esta línea
+                    this.filtro_vehiculos.add(vehiculo);                                         //con String.valueOf(vehiculo.getPrecio)
+                }
+            }
+            this.tbt_lista_vehiculos.setItems(filtro_vehiculos);
+        }
+    }
+
+
 }
