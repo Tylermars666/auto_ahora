@@ -1,8 +1,6 @@
 package co.edu.uniquindio.auto_ahora.persistence;
 
-import co.edu.uniquindio.auto_ahora.model.Auto;
-import co.edu.uniquindio.auto_ahora.model.Vehiculo;
-import co.edu.uniquindio.auto_ahora.model.Venta;
+import co.edu.uniquindio.auto_ahora.model.*;
 import javafx.scene.control.Alert;
 
 import java.util.ArrayList;
@@ -15,7 +13,9 @@ public class DataBase {
     public DataBase(){
         listaVehiculos = new ArrayList<Vehiculo>();
         listaVentas = new ArrayList<Venta>();
-        listaVehiculos.add(new Auto("123","Toyota","col123toy","Tacoma",4,4,true,1500000.0));
+        listaVehiculos.add(new Auto("123","Toyota","Mate","2019",4,2,true,1600000.0));
+        listaVehiculos.add(new Camion("456","Optimus","Extraterrestre","2020",6,1800000,350));
+        listaVehiculos.add(new Moto("789","Suzuki","Negra","2017",2,200,3.5,1500000));
     }
 
     public ArrayList<Vehiculo> getListaVehiculos(){
