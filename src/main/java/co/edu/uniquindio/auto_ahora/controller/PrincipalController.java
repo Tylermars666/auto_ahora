@@ -21,7 +21,7 @@ public class PrincipalController {
     @FXML
     private Button btn_menu_ventas;
 
-<<<<<<< HEAD
+
     @FXML
     private Button btn_salir;
 
@@ -29,8 +29,6 @@ public class PrincipalController {
     void abrirMenuActualizar(ActionEvent event) {
 
     }
-=======
->>>>>>> 323b8207ccbc701e4788b1154a661f0045ed953a
 
     @FXML
     void abrirMenuBusqueda(ActionEvent event) throws IOException {
