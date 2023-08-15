@@ -90,35 +90,36 @@ public class BusquedaController implements Initializable {
 
     @FXML
     void seleccionarVehiculoTabla(MouseEvent event) {
-        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();
+        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();   //Almaceno en un objeto Vehiculo
+                                                                                             //el registro que el usuario seleccionó de la tabla de busqueda
+        if(vehiculo!=null){                                                                 //Si hay un registro seleccionado (diferente de nulo)
 
-        if(vehiculo!=null){
-
-            this.txtPlaca.setText(vehiculo.getPlaca());
-            this.txtMarca.setText(vehiculo.getMarca());
+            this.txtPlaca.setText(vehiculo.getPlaca());                                    //Entonces lo que hace es poner en los textField
+            this.txtMarca.setText(vehiculo.getMarca());                                    //los atributos del vehiculo seleccionado
             this.txtReferencia.setText(vehiculo.getReferencia());
             this.txtModelo.setText(vehiculo.getModelo());
             this.txtPrecio.setText(String.valueOf(vehiculo.getPrecio()));
             this.txtNumRuedas.setText(String.valueOf(vehiculo.getNum_ruedas()));
 
-            switch (vehiculo.queSoy()){
-
+            switch (vehiculo.queSoy()){                                                 //Dependiendo de que vehiculo sea (auto, moto, camion)
+                                                                                        //se agregan a los dos campos adicionales los atributos que correspondan
                 case "Auto":
                     Auto auto = (Auto) vehiculo;
-                    this.txtAdicional_1.setText(String.valueOf(auto.getNum_puertas()));
-                    this.txtAdicional_2.setText(String.valueOf(auto.isGasolina()));
+                    this.txtAdicional_1.setText(String.valueOf(auto.getNum_puertas())); //En el caso del auto, en los campos adicionales
+                    this.txtAdicional_2.setText(String.valueOf(auto.isGasolina()));     //se ponen los datos num_puertas y isGasolina
                     break;
 
                 case "Moto":
                     Moto moto = (Moto)vehiculo;
-                    this.txtAdicional_1.setText(String.valueOf(moto.getCilindraje()));
-                    this.txtAdicional_2.setText(String.valueOf(moto.getTam_tanque()));
+                    this.txtAdicional_1.setText(String.valueOf(moto.getCilindraje())); //En el caso de la moto, en los campos adicionales
+                    this.txtAdicional_2.setText(String.valueOf(moto.getTam_tanque())); //se ponen los datos cilindraje y tam_tanque
                     break;
 
                 case "Camion":
                     Camion camion = (Camion)vehiculo;
-                    this.txtAdicional_1.setText(String.valueOf(camion.getCap_carga()));
-                    this.txtAdicional_2.setText("");
+                    this.txtAdicional_1.setText(String.valueOf(camion.getCap_carga())); //En el caso del camión, solo se llena uno de los campos
+                    this.txtAdicional_2.setText("");                                    //con el atributo cap_carga
+                    break;
             }
         }
     }
@@ -126,14 +127,105 @@ public class BusquedaController implements Initializable {
     @FXML
     void actualizarVehiculo(ActionEvent event) {
 
-        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();
-
+        Vehiculo vehiculo = this.tbt_lista_vehiculos.getSelectionModel().getSelectedItem();  //Almacena en un objeto Vehiculo el registro que se
+                                                                                             //selecciona de la tabla de busqueda
         if(vehiculo==null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+            Alert alert = new Alert(Alert.AlertType.ERROR);                 //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
             alert.setHeaderText(null);
             alert.setTitle("Error");
             alert.setContentText("Debe seleccionar un vehículo primero");
             alert.showAndWait();
+        }else{
+
+            String placa = this.txtPlaca.getText();                           //Métodos para obtener los valores
+            String marca = this.txtMarca.getText();                          //de los campos de texto de GUI
+            String referencia = this.txtReferencia.getText();
+            String modelo = this.txtModelo.getText();
+            int num_ruedas = Integer.parseInt(this.txtNumRuedas.getText());
+            double precio = Double.parseDouble(this.txtPrecio.getText());
+            int num_puertas;                                                      //Atributos adicionales que varían
+            boolean isGasolina;                                                   //Dependiendo si el vehiculo es
+            int cilindraje;                                                       //Auto, Moto o Camion
+            double tam_tanque;
+            int cap_carga;
+            Auto autoAux = null;                                                  //Creo objetos auxiliares para compararlos
+            Moto motoAux = null;                                                 //con los objetos (vehiculos) ya existentes
+            Camion camionAux = null;                                             //en la tabla de busqueda
+
+            switch (vehiculo.queSoy()){                                          //De acuerdo a si es auto, moto o camion
+
+                case "Auto":
+                    Auto auto = (Auto) vehiculo;                                            //Si el vehículo es un auto, hago un casteo (parse)
+                    num_puertas = Integer.parseInt(this.txtAdicional_1.getText());          //Entonces en ese caso, como es un auto, tiene los atributos
+                    isGasolina = Boolean.parseBoolean(this.txtAdicional_2.getText());       //puertas y gasolina. Los tomo de los campos de texto adicionales
+                    autoAux = new Auto(placa, marca, referencia, modelo,num_ruedas,num_puertas,isGasolina,precio);
+                    if(!this.vehiculos.contains(autoAux)){                                  //Evalúo si dentro de la lista de Vehículos no está
+                        auto.setPlaca(autoAux.getPlaca());                                  //el objeto 'autoAux', o sea, que no se repita el mismo
+                        auto.setMarca(autoAux.getMarca());                                  //Si el autoAux no existe, entonces tomo el auto original
+                        auto.setReferencia(autoAux.getReferencia());                        //y seteo los nuevos valores de la actualización
+                        auto.setModelo(autoAux.getModelo());
+                        auto.setNum_ruedas(autoAux.getNum_ruedas());
+                        auto.setNum_puertas(autoAux.getNum_puertas());
+                        auto.setPrecio(autoAux.getPrecio());
+                        auto.setGasolina(autoAux.isGasolina());
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);         //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+                        alert.setHeaderText(null);
+                        alert.setTitle("¡Actualización Exitosa!");                      //Mensaje para confirmar actualización
+                        alert.setContentText(auto.toString());
+                        alert.showAndWait();
+                        this.tbt_lista_vehiculos.refresh();
+                    }
+                    break;
+
+                case "Moto":
+                    Moto moto = (Moto)vehiculo;
+                    cilindraje = Integer.parseInt(this.txtAdicional_1.getText());                           //Funciona igual que el anterior
+                    tam_tanque = Double.parseDouble(this.txtAdicional_2.getText());
+                    motoAux = new Moto(placa, marca, referencia, modelo,num_ruedas,cilindraje,tam_tanque,precio);
+                    if(!this.vehiculos.contains(motoAux)){
+                        moto.setPlaca(motoAux.getPlaca());
+                        moto.setMarca(motoAux.getMarca());
+                        moto.setReferencia(motoAux.getReferencia());
+                        moto.setModelo(motoAux.getModelo());
+                        moto.setNum_ruedas(motoAux.getNum_ruedas());
+                        moto.setCilindraje(motoAux.getCilindraje());
+                        moto.setPrecio(motoAux.getPrecio());
+                        moto.setTam_tanque(motoAux.getTam_tanque());
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+                        alert.setHeaderText(null);
+                        alert.setTitle("¡Actualización Exitosa!");
+                        alert.setContentText(moto.toString());
+                        alert.showAndWait();
+
+                        this.tbt_lista_vehiculos.refresh();
+                    }
+                    break;
+
+                case "Camion":
+                    Camion camion = (Camion)vehiculo;
+                    cap_carga = Integer.parseInt(this.txtAdicional_1.getText());                           //Funciona igual que el anterior
+                    camionAux = new Camion(placa, marca, referencia, modelo,num_ruedas,precio,cap_carga);
+                    if(!this.vehiculos.contains(camionAux)){
+                        camion.setPlaca(camionAux.getPlaca());
+                        camion.setMarca(camionAux.getMarca());
+                        camion.setReferencia(camionAux.getReferencia());
+                        camion.setModelo(camionAux.getModelo());
+                        camion.setNum_ruedas(camionAux.getNum_ruedas());
+                        camion.setCap_carga(camionAux.getCap_carga());
+                        camion.setPrecio(camionAux.getPrecio());
+
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);     //Alerta de JavaFx para mostrar mensaje en la interfaz gráfica
+                        alert.setHeaderText(null);
+                        alert.setTitle("¡Actualización Exitosa!");
+                        alert.setContentText(camion.toString());
+                        alert.showAndWait();
+
+                        this.tbt_lista_vehiculos.refresh();
+                    }
+                    break;
+            }
+
+
         }
 
     }

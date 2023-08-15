@@ -60,7 +60,7 @@ public abstract class Vehiculo {
 
     public double getPrecio(){return precio;}
 
-    public void setPrecio(){this.precio = precio;}
+    public void setPrecio(double precio){this.precio = precio;}
 
     public void setNum_ruedas(int num_ruedas) {
         this.num_ruedas = num_ruedas;
