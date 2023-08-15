@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroMotoController">
+<AnchorPane prefHeight="372.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroMotoController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="570.0">
+      <Pane prefHeight="366.0" prefWidth="579.0">
          <children>
-            <Label layoutX="90.0" layoutY="23.0" text="REGISTRO MOTOCICLETA" underline="true">
+            <Label layoutX="167.0" layoutY="32.0" text="Registro Motocicleta">
                <font>
-                  <Font size="36.0" />
+                  <Font size="26.0" />
                </font>
             </Label>
             <Label layoutX="25.0" layoutY="233.0" text="Cilindraje" />
             <Label layoutX="285.0" layoutY="201.0" text="Tamaño Tanque" />
             <TextField fx:id="txtCilindraje" layoutX="95.0" layoutY="230.0" />
-            <Button fx:id="btnGuardarRegistroMoto" layoutX="221.0" layoutY="309.0" mnemonicParsing="false" onAction="#guardarRegistroMoto" prefHeight="38.0" prefWidth="129.0" text="GUARDAR">
+            <Button fx:id="btnGuardarRegistroMoto" layoutX="221.0" layoutY="309.0" mnemonicParsing="false" onAction="#guardarRegistroMoto" prefHeight="25.0" prefWidth="128.0" text="Guardar">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Button>
             <Label layoutX="42.0" layoutY="112.0" text="Placa" />

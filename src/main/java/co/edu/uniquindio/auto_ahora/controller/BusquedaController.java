@@ -95,7 +95,7 @@ public class BusquedaController implements Initializable {
     void eliminarVehiculo(ActionEvent event) {
 
     }
-    
+
     @FXML
     void seleccionarFiltro(ActionEvent event) {
 

@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroController">
+<AnchorPane prefHeight="235.0" prefWidth="247.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.RegistroController">
    <children>
-      <Pane layoutX="-3.0" layoutY="-3.0" prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="235.0" prefWidth="274.0">
          <children>
-            <Button fx:id="btnMoto" layoutX="32.0" layoutY="118.0" mnemonicParsing="false" onAction="#abrirRegistroMoto" prefHeight="50.0" prefWidth="138.0" text="Moto" />
-            <Button fx:id="btnAutomovil" layoutX="231.0" layoutY="118.0" mnemonicParsing="false" onAction="#abrirRegistroAutomovil" prefHeight="50.0" prefWidth="138.0" text="Automovil" />
-            <Button fx:id="btnCamion" layoutX="435.0" layoutY="118.0" mnemonicParsing="false" onAction="#abrirRegistroCamion" prefHeight="50.0" prefWidth="138.0" text="Camion" />
-            <Label layoutX="106.0" layoutY="28.0" prefHeight="50.0" prefWidth="389.0" text="SELECCIONE EL TIPO DE VEHICULO" textAlignment="CENTER">
+            <Button fx:id="btnMoto" layoutX="68.0" layoutY="129.0" mnemonicParsing="false" onAction="#abrirRegistroMoto" prefHeight="30.0" prefWidth="138.0" text="Moto" />
+            <Button fx:id="btnAutomovil" layoutX="68.0" layoutY="82.0" mnemonicParsing="false" onAction="#abrirRegistroAutomovil" prefHeight="30.0" prefWidth="138.0" text="Automovil" />
+            <Button fx:id="btnCamion" layoutX="68.0" layoutY="179.0" mnemonicParsing="false" onAction="#abrirRegistroCamion" prefHeight="30.0" prefWidth="138.0" text="Camion" />
+            <Label layoutX="39.0" layoutY="23.0" prefHeight="50.0" prefWidth="389.0" text="Seleccione el tipo de vehículo" textAlignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
          </children>
