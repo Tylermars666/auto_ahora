@@ -6,50 +6,74 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.PrincipalController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.PrincipalController">
    <children>
-      <Label alignment="CENTER" layoutX="210.0" layoutY="29.0" prefHeight="59.0" prefWidth="226.0" text="AUTO AHORA" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="196.0" layoutY="34.0" prefHeight="59.0" prefWidth="276.0" text="AUTO AHORA" textAlignment="CENTER">
          <font>
-            <Font name="Candara Bold" size="31.0" />
+            <Font name="Candara Bold" size="42.0" />
          </font>
+         <textFill>
+            <RadialGradient centerX="0.5044053031484461" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color opacity="0.0607902817428112" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="381.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/logo_cars.png" />
          </image>
       </ImageView>
-      <Text layoutX="68.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que deseas hacer?" wrappingWidth="158.93670654296875">
+      <Text layoutX="90.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que deseas hacer?" wrappingWidth="158.93670654296875">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Button fx:id="btn_menu_registro" layoutX="68.0" layoutY="166.0" mnemonicParsing="false" onAction="#abrirMenuRegistro" prefHeight="31.0" prefWidth="148.0" text="Registro de Vehiculo">
+      <Button fx:id="btn_menu_registro" layoutX="90.0" layoutY="166.0" mnemonicParsing="false" onAction="#abrirMenuRegistro" prefHeight="31.0" prefWidth="148.0" text="Registro de Vehiculo">
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="btn_menu_busqueda" layoutX="68.0" layoutY="217.0" mnemonicParsing="false" onAction="#abrirMenuBusqueda" prefHeight="31.0" prefWidth="148.0" text="Busqueda y Listado">
+      <Button fx:id="btn_menu_busqueda" layoutX="81.0" layoutY="217.0" mnemonicParsing="false" onAction="#abrirMenuBusqueda" prefHeight="31.0" prefWidth="166.0" text="Buscar, Actualizar o Eliminar">
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="btn_menu_actualizar" layoutX="68.0" layoutY="269.0" mnemonicParsing="false" onAction="#abrirMenuActualizar" prefHeight="31.0" prefWidth="148.0" text="Actualización de Datos">
+      <Button fx:id="btn_menu_ventas" layoutX="90.0" layoutY="269.0" mnemonicParsing="false" onAction="#abrirMenuVentas" prefHeight="31.0" prefWidth="148.0" text="Ventas y Reportes">
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="btn_menu_ventas" layoutX="68.0" layoutY="320.0" mnemonicParsing="false" onAction="#abrirMenuVentas" prefHeight="31.0" prefWidth="148.0" text="Ventas y Reportes">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="btn_menu_eliminar" layoutX="68.0" layoutY="381.0" mnemonicParsing="false" onAction="#abrirMenuEliminar" prefHeight="31.0" prefWidth="148.0" style="-fx-border-color: red;" text="Eliminar Vehículos" textFill="#ff0909">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
+      <Label layoutX="234.0" layoutY="377.0" prefHeight="31.0" prefWidth="200.0" text="Omar Piedrahita - Carlos Mancera">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="434.0" text="2023">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="235.0" layoutY="408.0" text="Todos los derechos reservados ©">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

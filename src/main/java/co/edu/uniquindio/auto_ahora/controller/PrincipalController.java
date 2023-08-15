@@ -11,14 +11,9 @@ import java.io.IOException;
 
 public class PrincipalController {
 
-    @FXML
-    private Button btn_menu_actualizar;
 
     @FXML
     private Button btn_menu_busqueda;
-
-    @FXML
-    private Button btn_menu_eliminar;
 
     @FXML
     private Button btn_menu_registro;
@@ -26,10 +21,6 @@ public class PrincipalController {
     @FXML
     private Button btn_menu_ventas;
 
-    @FXML
-    void abrirMenuActualizar(ActionEvent event) {
-
-    }
 
     @FXML
     void abrirMenuBusqueda(ActionEvent event) throws IOException {
@@ -46,10 +37,6 @@ public class PrincipalController {
 
     }
 
-    @FXML
-    void abrirMenuEliminar(ActionEvent event) {
-
-    }
 
     @FXML
     void abrirMenuRegistro(ActionEvent event) throws IOException {
