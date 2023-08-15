@@ -12,9 +12,9 @@
    <children>
       <Pane layoutX="7.0" prefHeight="400.0" prefWidth="592.0">
          <children>
-            <Label layoutX="104.0" layoutY="14.0" prefHeight="17.0" prefWidth="383.0" text="REGISTRO AUTOMOVIL" underline="true">
+            <Label layoutX="166.0" layoutY="14.0" prefHeight="53.0" prefWidth="261.0" text="Registro Automovil">
                <font>
-                  <Font size="36.0" />
+                  <Font size="30.0" />
                </font>
             </Label>
             <Label layoutX="36.0" layoutY="101.0" text="Placa" />
@@ -31,9 +31,9 @@
             <TextField fx:id="txtNumRuedas" layoutX="402.0" layoutY="219.0" />
             <Label layoutX="9.0" layoutY="276.0" text="Numero de Puertas" />
             <TextField fx:id="txtNumPuertas" layoutX="120.0" layoutY="272.0" />
-            <Button fx:id="btnGuardarRegistroAutomovil" layoutX="225.0" layoutY="331.0" mnemonicParsing="false" onAction="#guardarRegistroAutomovil" text="GUARDAR">
+            <Button fx:id="btnGuardarRegistroAutomovil" layoutX="236.0" layoutY="332.0" mnemonicParsing="false" onAction="#guardarRegistroAutomovil" prefHeight="30.0" prefWidth="120.0" text="Guardar">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font></Button>
             <ComboBox fx:id="comb_gasolina" layoutX="347.0" layoutY="272.0" onAction="#seleccionarCombustible" prefHeight="25.0" prefWidth="204.0" promptText="¿Es de gasolina?" />
          </children>

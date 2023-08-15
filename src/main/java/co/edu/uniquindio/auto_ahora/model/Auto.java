@@ -30,6 +30,11 @@ public class Auto extends Vehiculo {
     }
 
     @Override
+    public String queSoy() {
+        return "Auto";
+    }
+
+    @Override
     public String toString() {
         return "Auto \n" +
                 "Precio: " + this.getPrecio() + "\n" +
