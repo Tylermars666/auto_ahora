@@ -21,6 +21,11 @@ public class Camion extends Vehiculo {
     }
 
     @Override
+    public String queSoy() {
+        return "Camion";
+    }
+
+    @Override
     public String toString(){          //Método toString para imprimir en consola los valores del objeto creado.
 
         return "Moto \n" +

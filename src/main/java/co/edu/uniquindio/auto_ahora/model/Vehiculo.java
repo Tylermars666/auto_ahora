@@ -66,5 +66,7 @@ public abstract class Vehiculo {
         this.num_ruedas = num_ruedas;
     }
 
+    public abstract String queSoy();
+
 
 }

@@ -1,9 +1,8 @@
 package co.edu.uniquindio.auto_ahora.controller;
 
+import co.edu.uniquindio.auto_ahora.model.*;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
-import co.edu.uniquindio.auto_ahora.model.Concesionario;
-import co.edu.uniquindio.auto_ahora.model.Vehiculo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -105,6 +104,25 @@ public class BusquedaController implements Initializable {
             this.txtModelo.setText(vehiculo.getModelo());
             this.txtPrecio.setText(String.valueOf(vehiculo.getPrecio()));
             this.txtNumRuedas.setText(String.valueOf(vehiculo.getNum_ruedas()));
+
+            switch (vehiculo.queSoy()){
+
+                case "Auto":
+                    Auto auto = (Auto) vehiculo;
+                    this.txtAdicional_1.setText(String.valueOf(auto.getNum_puertas()));
+                    this.txtAdicional_2.setText(String.valueOf(auto.isGasolina()));
+                    break;
+
+                case "Moto":
+                    Moto moto = (Moto)vehiculo;
+                    this.txtAdicional_1.setText(String.valueOf(moto.getCilindraje()));
+                    this.txtAdicional_2.setText(String.valueOf(moto.getTam_tanque()));
+                    break;
+
+                case "Camion":
+                    Camion camion = (Camion)vehiculo;
+                    this.txtAdicional_1.setText(String.valueOf(camion.getCap_carga()));
+            }
         }
     }
 
