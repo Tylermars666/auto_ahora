@@ -8,24 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.VentasController">
+<AnchorPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.VentasController">
    <children>
       <Label layoutX="269.0" layoutY="14.0" text="Ventas">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tblVehiculosRegistrados" layoutX="36.0" layoutY="74.0" onMouseClicked="#seleccionarVehiculo" prefHeight="200.0" prefWidth="263.0">
+      <TableView fx:id="tblVehiculosRegistrados" layoutX="36.0" layoutY="74.0" onMouseClicked="#seleccionarVehiculo" prefHeight="150.0" prefWidth="265.0">
         <columns>
-          <TableColumn fx:id="col_marca_registrado" prefWidth="91.20001220703125" text="Marca" />
-            <TableColumn fx:id="col_placa_registrado" prefWidth="73.5999755859375" text="Placa" />
-            <TableColumn fx:id="col_precio_registrado" prefWidth="98.4000244140625" text="Precio" />
+          <TableColumn fx:id="col_marca_registrado" prefWidth="75.20001220703125" text="Marca" />
+            <TableColumn fx:id="col_placa_registrado" prefWidth="57.5999755859375" text="Placa" />
+            <TableColumn fx:id="col_precio_registrado" prefWidth="68.0" text="Precio" />
+            <TableColumn fx:id="col_tipo_vehiculo" prefWidth="61.59991455078125" text="Tipo" />
         </columns>
       </TableView>
-      <TableView fx:id="tblVehiculosVendidos" layoutX="330.0" layoutY="74.0" prefHeight="200.0" prefWidth="226.0">
+      <TableView fx:id="tblVehiculosVendidos" layoutX="330.0" layoutY="74.0" prefHeight="150.0" prefWidth="236.0">
         <columns>
-          <TableColumn fx:id="col_marca_vendido" prefWidth="109.5999755859375" text="Marca" />
-            <TableColumn fx:id="col_placa_vendido" prefWidth="116.00006103515625" text="Placa" />
+          <TableColumn fx:id="col_marca_vendido" prefWidth="80.79998779296875" text="Marca" />
+            <TableColumn fx:id="col_placa_vendido" prefWidth="74.39990234375" text="Placa" />
+            <TableColumn fx:id="col_comprador" text="Comprador" />
         </columns>
       </TableView>
       <Label layoutX="136.0" layoutY="293.0" text="Datos para venta">
@@ -33,12 +35,19 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_codigo" layoutX="103.0" layoutY="320.0" prefHeight="26.0" prefWidth="60.0" />
-      <TextField fx:id="txt_nombre_comprador" layoutX="182.0" layoutY="320.0" prefHeight="26.0" prefWidth="118.0" />
+      <TextField fx:id="txt_codigo" layoutX="103.0" layoutY="320.0" prefHeight="26.0" prefWidth="60.0" promptText="Codigo" />
+      <TextField fx:id="txt_nombre_comprador" layoutX="182.0" layoutY="320.0" prefHeight="26.0" prefWidth="126.0" promptText="Nombre comprador" />
       <Button fx:id="btn_vender" layoutX="161.0" layoutY="360.0" mnemonicParsing="false" onAction="#venderVehiculo" text="Vender" />
       <TextField fx:id="txt_placa_registrado" layoutX="14.0" layoutY="320.0" prefHeight="26.0" prefWidth="70.0" />
       <Label layoutX="35.0" layoutY="304.0" text="Placa" />
       <Label layoutX="109.0" layoutY="44.0" text="Vehiculos Registrados" />
       <Label layoutX="397.0" layoutY="44.0" text="Vehiculos Vendidos" />
+      <Label layoutX="20.0" layoutY="245.0" text="Autos" />
+      <Label layoutX="200.0" layoutY="245.0" text="Camiones" />
+      <Label layoutX="107.0" layoutY="246.0" text="Motos" />
+      <TextField fx:id="txt_num_autos" editable="false" layoutX="60.0" layoutY="240.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="txt_num_motos" editable="false" layoutX="151.0" layoutY="240.0" prefHeight="26.0" prefWidth="34.0" />
+      <TextField fx:id="txt_num_camiones" editable="false" layoutX="264.0" layoutY="240.0" prefHeight="26.0" prefWidth="34.0" />
+      <Button fx:id="btn_reporte" layoutX="398.0" layoutY="242.0" mnemonicParsing="false" onAction="#generarReporte" text="Generar reporte" />
    </children>
 </AnchorPane>

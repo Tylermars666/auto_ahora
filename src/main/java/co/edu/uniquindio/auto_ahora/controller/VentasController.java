@@ -18,7 +18,16 @@ import java.util.ResourceBundle;
 public class VentasController implements Initializable {
 
     @FXML
+    private Button btn_reporte;
+
+    @FXML
     private Button btn_vender;
+
+    @FXML
+    private TableColumn<?, ?> col_comprador;
+
+    @FXML
+    private TableColumn<?, ?> col_tipo_vehiculo;
 
     @FXML
     private TableColumn<?, ?> col_marca_registrado;
@@ -43,6 +52,15 @@ public class VentasController implements Initializable {
 
     @FXML
     private TableView<Venta> tblVehiculosVendidos;
+
+    @FXML
+    private TextField txt_num_autos;
+
+    @FXML
+    private TextField txt_num_camiones;
+
+    @FXML
+    private TextField txt_num_motos;
 
     @FXML
     private TextField txt_codigo;
@@ -90,6 +108,11 @@ public class VentasController implements Initializable {
             this.tblVehiculosVendidos.refresh();
 
         }
+
+    }
+
+    @FXML
+    void generarReporte(ActionEvent event) {
 
     }
 
