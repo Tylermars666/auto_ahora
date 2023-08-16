@@ -75,12 +75,12 @@ public class VentasController implements Initializable {
     @FXML
     void seleccionarVehiculo(MouseEvent event) {
 
-        Vehiculo vehiculo = this.tblVehiculosRegistrados.getSelectionModel().getSelectedItem();
-
+        Vehiculo vehiculo = this.tblVehiculosRegistrados.getSelectionModel().getSelectedItem();   //Se guarda el objeto Vehiculo
+                                                                                                  //seleccionado de la tabla de vehiculos registrados
         if(vehiculo!=null) {
-            this.txt_placa_registrado.setText(vehiculo.getPlaca());
-            this.txt_nombre_comprador.setText("");
-            this.txt_codigo.setText("");
+            this.txt_placa_registrado.setText(vehiculo.getPlaca());                              //Se evalúa que si se haya seleccionado un vehiculo
+            this.txt_nombre_comprador.setText("");                                               //Se pone la placa en el primer textField
+            this.txt_codigo.setText("");                                                         //Y se limpian los otros dos textField restante
         }
     }
 
@@ -135,25 +135,25 @@ public class VentasController implements Initializable {
     @FXML
     void generarReporte(ActionEvent event) {
 
-        String vehiculo_tabla = "Vehiculo  Placa  Marca  Precio  \n";
-        String vehiculo_string ="";
-        String reporte;
+        String vehiculo_tabla = "Vehiculo  Placa  Marca  Precio  \n";                             //Estos Strings son para generar
+        String vehiculo_string ="";                                                               //una pseudo tabla de reporte de ventas
+        String reporte;                                                                           //como para simular que se imprime un documento
         Vehiculo vehiculo = null;
 
         double cont_total_precio = 0;
 
-        for(int i = 0;i < Concesionario.getInstancia().getDataBase().getListaVentas().size();i++){
-
-            vehiculo = Concesionario.getInstancia().getDataBase().getListaVentas().get(i).getVehiculo();
+        for(int i = 0;i < Concesionario.getInstancia().getDataBase().getListaVentas().size();i++){              //Este ciclo recorre los vehiculos
+                                                                                                                //vendidos y los va juntando en un String
+            vehiculo = Concesionario.getInstancia().getDataBase().getListaVentas().get(i).getVehiculo();        //como si se estuvieran poniendo en una tabla
             vehiculo_string += vehiculo.queSoy()+ "    " + vehiculo.getPlaca()+ "  " + vehiculo.getMarca() + "  " + vehiculo.getPrecio() + "\n";
             cont_total_precio+=vehiculo.getPrecio();
 
         }
-
+                                                                                                               //Finalmente este es el String que se imprime
         reporte = vehiculo_tabla + vehiculo_string + "                                    Total :" + cont_total_precio;
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);                                        //Salta alerta
-        alert.setHeaderText(null);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);                                                 //Se hace uso de un ALERT
+        alert.setHeaderText(null);                                                                            //para imprimir el reporte
         alert.setTitle("Reporte");
         alert.setContentText(reporte);
         alert.showAndWait();
