@@ -79,7 +79,8 @@ public class VentasController implements Initializable {
 
         if(vehiculo!=null) {
             this.txt_placa_registrado.setText(vehiculo.getPlaca());
-
+            this.txt_nombre_comprador.setText("");
+            this.txt_codigo.setText("");
         }
     }
 
@@ -134,10 +135,27 @@ public class VentasController implements Initializable {
     @FXML
     void generarReporte(ActionEvent event) {
 
+        String vehiculo_tabla = "Vehiculo  Placa  Marca  Precio  \n";
+        String vehiculo_string ="";
+        String reporte;
+        Vehiculo vehiculo = null;
+
+        double cont_total_precio = 0;
+
+        for(int i = 0;i < Concesionario.getInstancia().getDataBase().getListaVentas().size();i++){
+
+            vehiculo = Concesionario.getInstancia().getDataBase().getListaVentas().get(i).getVehiculo();
+            vehiculo_string += vehiculo.queSoy()+ "    " + vehiculo.getPlaca()+ "  " + vehiculo.getMarca() + "  " + vehiculo.getPrecio() + "\n";
+            cont_total_precio+=vehiculo.getPrecio();
+
+        }
+
+        reporte = vehiculo_tabla + vehiculo_string + "                                    Total :" + cont_total_precio;
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);                                        //Salta alerta
         alert.setHeaderText(null);
         alert.setTitle("Reporte");
-        alert.setContentText("AQUÍ VAN TODOS LOS AUTOS VENDIDOS");
+        alert.setContentText(reporte);
         alert.showAndWait();
 
     }
