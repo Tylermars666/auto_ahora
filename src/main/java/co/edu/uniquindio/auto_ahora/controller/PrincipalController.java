@@ -23,6 +23,14 @@ public class PrincipalController {
 
 
     @FXML
+    private Button btn_salir;
+
+    @FXML
+    void abrirMenuActualizar(ActionEvent event) {
+
+    }
+
+    @FXML
     void abrirMenuBusqueda(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/busqueda-view.fxml"));
@@ -65,6 +73,11 @@ public class PrincipalController {
         VentasController controller = loader.getController();
         stage.show();
 
+
+    }
+
+    @FXML
+    void cerrarAplicacion(ActionEvent event) {
 
     }
 
