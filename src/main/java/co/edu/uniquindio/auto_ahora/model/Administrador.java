@@ -47,4 +47,9 @@ public class Administrador implements autoAhoraCRUD {
     public void eliminarVehiculo(Vehiculo vehiculo) {
         dataBase.getListaVehiculos().remove(vehiculo);
     }
+
+    @Override
+    public void venderVehiculo(Venta venta) {
+        dataBase.setVenta(venta);
+    }
 }

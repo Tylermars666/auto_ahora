@@ -16,7 +16,6 @@ public interface autoAhoraCRUD {
     public void eliminarVehiculo(Vehiculo vehiculo);
 
     //Vender
-
-    //Generar Reporte
+    public void venderVehiculo(Venta venta);
 
 }

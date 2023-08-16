@@ -54,7 +54,17 @@ public class PrincipalController {
     }
 
     @FXML
-    void abrirMenuVentas(ActionEvent event) {
+    void abrirMenuVentas(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/auto_ahora/view/ventas-view.fxml"));
+
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();                                 //Método para conectar ventana principal con ventana de Registro
+        stage.setTitle("Ventas");
+        stage.setScene(scene);
+
+        VentasController controller = loader.getController();
+        stage.show();
+
 
     }
 

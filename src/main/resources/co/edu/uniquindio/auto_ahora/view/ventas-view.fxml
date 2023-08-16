@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.auto_ahora.controller.VentasController">
    <children>
       <Label layoutX="269.0" layoutY="14.0" text="Ventas">
@@ -18,17 +17,15 @@
       </Label>
       <TableView fx:id="tblVehiculosRegistrados" layoutX="36.0" layoutY="74.0" onMouseClicked="#seleccionarVehiculo" prefHeight="200.0" prefWidth="263.0">
         <columns>
-          <TableColumn fx:id="col_vehiculo_registrado" prefWidth="62.4000244140625" text="Vehiculo" />
-          <TableColumn fx:id="col_marca_registrado" prefWidth="56.79998779296875" text="Marca" />
-            <TableColumn fx:id="col_placa_registrado" prefWidth="63.199951171875" text="Placa" />
-            <TableColumn fx:id="col_precio_registrado" prefWidth="78.39996337890625" text="Precio" />
+          <TableColumn fx:id="col_marca_registrado" prefWidth="91.20001220703125" text="Marca" />
+            <TableColumn fx:id="col_placa_registrado" prefWidth="73.5999755859375" text="Placa" />
+            <TableColumn fx:id="col_precio_registrado" prefWidth="98.4000244140625" text="Precio" />
         </columns>
       </TableView>
       <TableView fx:id="tblVehiculosVendidos" layoutX="330.0" layoutY="74.0" prefHeight="200.0" prefWidth="226.0">
         <columns>
-          <TableColumn fx:id="col_vehiculo_vendido" prefWidth="75.0" text="Vehiculo" />
-          <TableColumn fx:id="col_marca_vendido" prefWidth="75.0" text="Marca" />
-            <TableColumn fx:id="col_placa_vendido" prefWidth="75.0" text="Placa" />
+          <TableColumn fx:id="col_marca_vendido" prefWidth="109.5999755859375" text="Marca" />
+            <TableColumn fx:id="col_placa_vendido" prefWidth="116.00006103515625" text="Placa" />
         </columns>
       </TableView>
       <Label layoutX="136.0" layoutY="293.0" text="Datos para venta">
