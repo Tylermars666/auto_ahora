@@ -86,6 +86,7 @@ public class VentasController implements Initializable {
     @FXML
     void venderVehiculo(ActionEvent event) {
 
+
         Vehiculo vehiculo = this.tblVehiculosRegistrados.getSelectionModel().getSelectedItem();    //Selecciona el vehiculo
                                                                                                    //sobre el cual el usuario da click
         if(vehiculo==null){                                                                        //si el usuario no ha seleccionado un vehiculo
@@ -96,16 +97,35 @@ public class VentasController implements Initializable {
             alert.showAndWait();
         }else{
 
-            String codigo = this.txt_codigo.getText();
-            String nombre_comprador = this.txt_nombre_comprador.getText();
+            String codigo = this.txt_codigo.getText();                                            //Para tomar de cada textField
+            String nombre_comprador = this.txt_nombre_comprador.getText();                        //Los datos para generar la venta
             Venta venta = new Venta(codigo,nombre_comprador,vehiculo);
 
-            Concesionario.getInstancia().getAdmin().venderVehiculo(venta);
+            Concesionario.getInstancia().getAdmin().venderVehiculo(venta);                       //Se agrega a la base de datos la venta
             this.vehiculos_vendidos.add(venta);
-            this.vehiculos.remove(vehiculo);
-            this.tblVehiculosVendidos.setItems(vehiculos_vendidos);
-            this.tblVehiculosRegistrados.refresh();
-            this.tblVehiculosVendidos.refresh();
+            switch (vehiculo.queSoy()){                                                          //Estructura switch para restar del contador
+                                                                                                //de vehiculos disponibles, los que se vayan vendiendo
+                case "Auto":
+                    int cont_auto = Integer.parseInt(this.txt_num_autos.getText())-1;
+                    this.txt_num_autos.setText(String.valueOf(cont_auto));
+                    break;
+
+                case "Moto":
+                    int cont_moto = Integer.parseInt(this.txt_num_motos.getText())-1;
+                    this.txt_num_motos.setText(String.valueOf(cont_moto));
+                    break;
+
+                case "Camion":
+                    int cont_camion = Integer.parseInt(this.txt_num_camiones.getText())-1;
+                    this.txt_num_camiones.setText(String.valueOf(cont_camion));
+                    break;
+            }
+            this.vehiculos.remove(vehiculo);                                                      //Y se remueve de la lista de vehiculos registrados
+            Concesionario.getInstancia().getAdmin().eliminarVehiculo(vehiculo);                   //el vehículo que se acaba de vender
+            this.tblVehiculosVendidos.setItems(vehiculos_vendidos);                              //luego se agrega a la tabla de vehiculos vendidos
+
+            this.tblVehiculosRegistrados.refresh();                                                //Para refrescar las tablas
+            this.tblVehiculosVendidos.refresh();                                                   //y se actualicen los datos agregados
 
         }
 
