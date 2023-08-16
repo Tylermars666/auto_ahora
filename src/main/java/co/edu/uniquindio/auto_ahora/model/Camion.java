@@ -2,7 +2,8 @@ package co.edu.uniquindio.auto_ahora.model;
 
 public class Camion extends Vehiculo {
 
-    int cap_carga;
+    private int cap_carga;
+    private String tipoVehiculo;
 
     public Camion (){}
 
@@ -10,6 +11,7 @@ public class Camion extends Vehiculo {
 
         super(placa, marca, referencia, modelo, num_ruedas, precio);
         this.cap_carga = cap_carga;
+        this.tipoVehiculo = "Camion";
     }
 
     public int getCap_carga() {
@@ -18,6 +20,10 @@ public class Camion extends Vehiculo {
 
     public void setCap_carga(int cap_carga) {
         this.cap_carga = cap_carga;
+    }
+
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
     @Override

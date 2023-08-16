@@ -4,6 +4,7 @@ public class Auto extends Vehiculo {
 
     private int num_puertas;
     private boolean isGasolina;
+    private String tipoVehiculo;
 
     public Auto(){}
 
@@ -11,6 +12,7 @@ public class Auto extends Vehiculo {
         super(placa, marca, referencia, modelo, num_ruedas, precio);
         this.num_puertas = num_puertas;
         this.isGasolina = isGasolina;
+        this.tipoVehiculo = "Auto";
     }
 
     public int getNum_puertas() {
@@ -27,6 +29,10 @@ public class Auto extends Vehiculo {
 
     public void setGasolina(boolean gasolina) {
         isGasolina = gasolina;
+    }
+
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
     @Override

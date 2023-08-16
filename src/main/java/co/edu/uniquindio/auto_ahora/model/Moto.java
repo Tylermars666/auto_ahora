@@ -4,6 +4,7 @@ public class Moto extends Vehiculo {
 
     private int cilindraje;
     private double tam_tanque;
+    private String tipoVehiculo;
 
     public Moto(){}
 
@@ -12,6 +13,7 @@ public class Moto extends Vehiculo {
         super(placa, marca, referencia, modelo, num_ruedas, precio);
         this.cilindraje = cilindraje;
         this.tam_tanque = tam_tanque;
+        this.tipoVehiculo = "Moto";
     }
 
     public int getCilindraje() {
@@ -28,6 +30,10 @@ public class Moto extends Vehiculo {
 
     public void setTam_tanque(double tam_tanque) {
         this.tam_tanque = tam_tanque;
+    }
+
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
     @Override

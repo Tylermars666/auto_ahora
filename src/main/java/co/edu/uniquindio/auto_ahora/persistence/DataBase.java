@@ -16,7 +16,6 @@ public class DataBase {
         listaVehiculos.add(new Auto("123","Toyota","Mate","2019",4,2,true,1600000.0));
         listaVehiculos.add(new Camion("456","Optimus","Extraterrestre","2020",6,1800000,350));
         listaVehiculos.add(new Moto("789","Suzuki","Negra","2017",2,200,3.5,1500000));
-        listaVentas.add(new Venta("00001","Carlos Mancera",this.listaVehiculos.get(1)));
     }
 
     public ArrayList<Vehiculo> getListaVehiculos(){
