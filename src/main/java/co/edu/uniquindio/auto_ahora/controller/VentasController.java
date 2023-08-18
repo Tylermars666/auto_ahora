@@ -177,7 +177,8 @@ public class VentasController implements Initializable {
         this.vehiculos.addAll(Concesionario.getInstancia().getDataBase().getListaVehiculos());   //Setear todos los registros de la 'ObservableList' vehiculos
         this.tblVehiculosRegistrados.setItems(vehiculos);                                        //directamente a la tabla
 
-        for(Vehiculo vehiculo:vehiculos){                                                       //Este ciclo recorre los vehiculos
+        for(Vehiculo vehiculo:vehiculos){
+            //if(vehiculo instanceof Moto)                                               Este ciclo recorre los vehiculos
             switch (vehiculo.queSoy()){                                                 //Dependiendo de que vehiculo sea (auto, moto, camion)
                                                                                         //se suma al contador correspondiente para setearlo en el textField
                 case "Auto":
