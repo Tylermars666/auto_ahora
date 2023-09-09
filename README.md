@@ -6,11 +6,15 @@ TALLER PROGRAMACION III
 
 Repositorio que corresponde al primer taller de la asignatura de Programacion III de la Universidad del Quindío
 <p align="center">
-<img width="150" src="https://www.uniquindio.edu.co/info/uniquindio/media/bloque2.png"
+<img width="150" src="https://www.uniquindio.edu.co/info/uniquindio/media/bloque2.png">
 </p>
 
 Enunciado:
 El  concesionario AUTO_AHORA los ha contratado para desarrollar un software administrativo para su empresa. Con esta aplicación ellos esperan tener administración de los vehículos que allí manejan, tener control sobre los vehículos en stock.
+
+<p align="center">
+<img  src="src/main/resources/co/edu/uniquindio/auto_ahora/view/images/auto1.jpg">
+</p>
 
 Requerimientos funcionales:
 1.	La aplicación debe permitir registrar un vehículo en su sistema.
