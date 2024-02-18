@@ -22,6 +22,6 @@ public class PrincipalApp extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(); //launch(PrincipalApp.class,args);
     }
 }
