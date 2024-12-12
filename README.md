@@ -4,7 +4,7 @@
 TALLER PROGRAMACION III
 </h3>
 
-Repositorio que corresponde al primer taller de la asignatura de Programacion III de la Universidad del Quindío
+Repositorio que corresponde al primer taller de la asignatura de Programacion III de la Universidad del Quindío.
 <p align="center">
 <img width="150" src="https://www.uniquindio.edu.co/info/uniquindio/media/bloque2.png">
 </p>
